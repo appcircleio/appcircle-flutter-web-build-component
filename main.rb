@@ -20,7 +20,7 @@ end
 run_command("flutter channel beta")
 run_command("flutter upgrade")
 run_command("flutter config --enable-web")
-run_command("flutter build web")
+run_command("cd #{ac_flutter_project_dir} && flutter build web")
 
 puts "Copying artifacts to output folder..."
 web_output_folder="#{ac_flutter_project_dir}/build/web"
