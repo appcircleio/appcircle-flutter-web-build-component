@@ -8,11 +8,6 @@ inputs:
   isRequired: true
   title: Flutter Project Directory
   description: "Specifies the root of your Flutter project where your pubspec.yaml file exist."
-- key: "AC_FLUTTER_BUILD_MODE"
-  isRequired: false
-  title: Build Mode
-  description: "Specifies Flutter build mode. Defaults to: release"
-  helpText:
 outputs:
 - key: "AC_FLUTTER_WEB_PATH"
   title: "APK Path"

@@ -8,7 +8,6 @@ def get_env_variable(key)
 end
 
 ac_flutter_project_dir = get_env_variable("AC_FLUTTER_PROJECT_DIR") || abort('Missing Flutter project path.')
-ac_flutter_build_mode = get_env_variable("AC_FLUTTER_BUILD_MODE") || "release"
 ac_output_folder = get_env_variable("AC_OUTPUT_DIR") || abort('Missing output folder.')
 
 def run_command(command)
@@ -21,7 +20,7 @@ end
 run_command("flutter channel beta")
 run_command("flutter upgrade")
 run_command("flutter config --enable-web")
-run_command("flutter build web --#{ac_flutter_build_mode}")
+run_command("flutter build web")
 
 puts "Copying artifacts to output folder..."
 web_output_folder="#{ac_flutter_project_dir}/build/web"
