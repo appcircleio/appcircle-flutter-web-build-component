@@ -25,7 +25,7 @@ run_command("cd #{ac_flutter_project_dir} && flutter build web")
 puts "Copying artifacts to output folder..."
 web_output_folder="#{ac_flutter_project_dir}/build/web"
 
-FileUtils.copy_entry web_output_folder, "#{ac_output_folder}"
+FileUtils.copy_entry web_output_folder, "#{ac_output_folder}/web"
 
 puts "Exporting AC_FLUTTER_WEB_PATH=#{ac_output_folder}/web"
 
