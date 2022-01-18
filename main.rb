@@ -17,8 +17,6 @@ def run_command(command)
     end
 end
 
-run_command("flutter channel beta")
-run_command("flutter upgrade")
 run_command("flutter config --enable-web")
 run_command("cd #{ac_flutter_project_dir} && flutter build web")
 
