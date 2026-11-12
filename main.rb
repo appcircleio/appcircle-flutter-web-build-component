@@ -7,8 +7,12 @@ def get_env_variable(key)
 	return (ENV[key] == nil || ENV[key] == "") ? nil : ENV[key]
 end
 
+if __FILE__ == $PROGRAM_NAME
+
 ac_flutter_project_dir = get_env_variable("AC_FLUTTER_PROJECT_DIR") || abort('Missing Flutter project path.')
 ac_output_folder = get_env_variable("AC_OUTPUT_DIR") || abort('Missing output folder.')
+
+end # if __FILE__ == $PROGRAM_NAME
 
 def run_command(command)
     puts "@@[command] #{command}"
@@ -16,6 +20,8 @@ def run_command(command)
       exit $?.exitstatus
     end
 end
+
+if __FILE__ == $PROGRAM_NAME
 
 run_command("flutter config --enable-web")
 run_command("cd #{ac_flutter_project_dir} && flutter build web")
@@ -32,3 +38,5 @@ open(ENV['AC_ENV_FILE_PATH'], 'a') { |f|
 }
 
 exit 0
+
+end # if __FILE__ == $PROGRAM_NAME
